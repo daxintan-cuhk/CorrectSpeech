@@ -1,13 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Title</title>
-</head>
-<body>
-<h1 align='center'>Speech examples of "CorrectSpeech: A Fully Automated System for Speech Correction and Accent Reduction"</h1>
-<h3>
-    paper:
-</h3>
-</body>
-</html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        </head>
+        <body>
+        <h1 align='center'>Speech examples of "CorrectSpeech: A Fully Automated System for Speech Correction and Accent Reduction"</h1>
+        <h3>
+            paper: 
+        </h3>
+        
+<hr><h3><span style="color:red">1.Comparison of speech recognition and alignment (S2T) module:</span><br>
+        In this part, we make comparison between two S2T modules: F-Align and CTC-Align. <br>
+        <br>
+        Oracle: In this setting, the ground-truth perturbed location and perturbed content for correction.
+        F-Align:  This setting consists of a byte pair encoding  (BPE) based automatic speech recognition (ASR) model 
+        for recognizing word sequence from speech. Then we apply a grapheme-to-phoneme (G2P) module to convert the word 
+        sequence to phone sequence. Finally, we apply a forced aligner to align the word sequence and the phone sequence 
+        with the speech to obtain word-level and phone-level time stamps. These are used for correction. <br>
+        CTC-Align: This setting consists of a phone-based connectionist temporal classification (CTC) ASR model for 
+        recognizing phone sequence from speech. We apply greedy decoding to obtain the recognition result. For phone-based 
+        CTC decoding, the output of each frame is either a phone label or a ``blank" label. By counting the frame index, 
+        we obtain the time-stamp of each phone, i.e. phone-level time stamps from the speech. These are used for correction. <br>
+        We use Word-Phone correction method in this part. <br>
+        <br>
+        In each sample, an original audio, a perturbed audio and three corrected audios from three different systems are 
+        provided. The original audio is the groundtruth recording in VCTK dataset. THe perturbed audio is obtained by carrying
+        out   <td><strong><font size="5">perturbed audio</font></strong></td>
+                    </tr>
+                 word-level perturbation, including insertion, replacement and deletion, to the original audio. The corrected 
+        audio is obtained by feeding the perturbed audio and unperturbed text to the system as input.<br></h3>
+        
+<hr>
+                <strong>Sample:{{sample_index}}<br></strong>
+                <table border='1'>
+                    <tr>
+                        <td><strong><font size="5">original audio</font?</strong></td>
+                        <td><strong><font size="5">perturbed audio</font></strong></td>
+                    </tr>
+                    <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p226/p226_154/original.wav' type='audio/wav'><br>
+                </audio>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p226/p226_154/perturbed.wav' type='audio/wav'><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='3'>original text:initial reports said the aircraft had experienced a loss of power
+</td>
+        </tr>
+        <tr>
+            <td colspan='3'>perturbed text:initial said the aircraft had experienced reported loss of power
+</td>
+        </tr>
+        <tr>
+            <td><strong><font size="5">Oracle system corrected audio</font> </strong></td>
+            <td><strong><font size="5">F-Align system corrected audio</font> </strong></td>
+            <td><strong><font size="5">CTC-Align system corrected audio</font>> </strong></td>
+        </tr>
+        <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p226/p226_154/word_level_correct_by_phone_level_alignment-perturbation-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p226/p226_154/word_level_correct_by_phone_level_alignment-model_0-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p226/p226_154/word_level_correct_by_phone_level_alignment-model_1-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+        </tr>
+    </table>
+            
+<hr>
+                <strong>Sample:{{sample_index}}<br></strong>
+                <table border='1'>
+                    <tr>
+                        <td><strong><font size="5">original audio</font?</strong></td>
+                        <td><strong><font size="5">perturbed audio</font></strong></td>
+                    </tr>
+                    <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p227/p227_385/original.wav' type='audio/wav'><br>
+                </audio>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p227/p227_385/perturbed.wav' type='audio/wav'><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='3'>original text:salary changes are long overdue
+</td>
+        </tr>
+        <tr>
+            <td colspan='3'>perturbed text:salary changes are long number overdue
+</td>
+        </tr>
+        <tr>
+            <td><strong><font size="5">Oracle system corrected audio</font> </strong></td>
+            <td><strong><font size="5">F-Align system corrected audio</font> </strong></td>
+            <td><strong><font size="5">CTC-Align system corrected audio</font>> </strong></td>
+        </tr>
+        <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p227/p227_385/word_level_correct_by_phone_level_alignment-perturbation-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p227/p227_385/word_level_correct_by_phone_level_alignment-model_0-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p227/p227_385/word_level_correct_by_phone_level_alignment-model_1-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+        </tr>
+    </table>
+            
+<hr>
+                <strong>Sample:{{sample_index}}<br></strong>
+                <table border='1'>
+                    <tr>
+                        <td><strong><font size="5">original audio</font?</strong></td>
+                        <td><strong><font size="5">perturbed audio</font></strong></td>
+                    </tr>
+                    <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p228/p228_169/original.wav' type='audio/wav'><br>
+                </audio>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p228/p228_169/perturbed.wav' type='audio/wav'><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='3'>original text:eight months later he was dead
+</td>
+        </tr>
+        <tr>
+            <td colspan='3'>perturbed text:require months later he was dead
+</td>
+        </tr>
+        <tr>
+            <td><strong><font size="5">Oracle system corrected audio</font> </strong></td>
+            <td><strong><font size="5">F-Align system corrected audio</font> </strong></td>
+            <td><strong><font size="5">CTC-Align system corrected audio</font>> </strong></td>
+        </tr>
+        <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p228/p228_169/word_level_correct_by_phone_level_alignment-perturbation-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p228/p228_169/word_level_correct_by_phone_level_alignment-model_0-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p228/p228_169/word_level_correct_by_phone_level_alignment-model_1-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+        </tr>
+    </table>
+            
+<hr>
+                <strong>Sample:{{sample_index}}<br></strong>
+                <table border='1'>
+                    <tr>
+                        <td><strong><font size="5">original audio</font?</strong></td>
+                        <td><strong><font size="5">perturbed audio</font></strong></td>
+                    </tr>
+                    <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p231/p231_177/original.wav' type='audio/wav'><br>
+                </audio>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p231/p231_177/perturbed.wav' type='audio/wav'><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='3'>original text:the hibs manager is no fool
+</td>
+        </tr>
+        <tr>
+            <td colspan='3'>perturbed text:hands the hibs manager is no fool
+</td>
+        </tr>
+        <tr>
+            <td><strong><font size="5">Oracle system corrected audio</font> </strong></td>
+            <td><strong><font size="5">F-Align system corrected audio</font> </strong></td>
+            <td><strong><font size="5">CTC-Align system corrected audio</font>> </strong></td>
+        </tr>
+        <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p231/p231_177/word_level_correct_by_phone_level_alignment-perturbation-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p231/p231_177/word_level_correct_by_phone_level_alignment-model_0-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p231/p231_177/word_level_correct_by_phone_level_alignment-model_1-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+        </tr>
+    </table>
+            
+<hr>
+                <strong>Sample:{{sample_index}}<br></strong>
+                <table border='1'>
+                    <tr>
+                        <td><strong><font size="5">original audio</font?</strong></td>
+                        <td><strong><font size="5">perturbed audio</font></strong></td>
+                    </tr>
+                    <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p232/p232_021/original.wav' type='audio/wav'><br>
+                </audio>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p232/p232_021/perturbed.wav' type='audio/wav'><br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan='3'>original text:the difference in the rainbow depends considerably upon the size of the drops and the width of the colored band increases as the size of the drops increases
+</td>
+        </tr>
+        <tr>
+            <td colspan='3'>perturbed text:the difference in the depends considerably upon the size of drops and the width tragedy of the colored band office french the size of the drops increases
+</td>
+        </tr>
+        <tr>
+            <td><strong><font size="5">Oracle system corrected audio</font> </strong></td>
+            <td><strong><font size="5">F-Align system corrected audio</font> </strong></td>
+            <td><strong><font size="5">CTC-Align system corrected audio</font>> </strong></td>
+        </tr>
+        <tr>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p232/p232_021/word_level_correct_by_phone_level_alignment-perturbation-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p232/p232_021/word_level_correct_by_phone_level_alignment-model_0-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+            <td>
+                <audio controls='controls' style='width: 240px;'>
+                    <source src='sample/2022_03_12_correct_perturbed_VCTK/p232/p232_021/word_level_correct_by_phone_level_alignment-model_1-normal_audio_outputs.wav' type='audio/wav'>
+                </audio>
+                <br>
+            </td>
+        </tr>
+    </table>

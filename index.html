@@ -14,7 +14,7 @@
 In this part, we make comparison between three S2T modules: Oracle, F-Align and CTC-Align. <br>
 <br>
 <span style="color:blue">Oracle</span>: In this setting, the ground-truth perturbed location and perturbed content for correction. <br>
-<span style="color:blue">1F-Align</span>:  This setting consists of a byte pair encoding  (BPE) based automatic speech recognition (ASR) model 
+<span style="color:blue">F-Align</span>:  This setting consists of a byte pair encoding  (BPE) based automatic speech recognition (ASR) model 
 for recognizing word sequence from speech. Then we apply a grapheme-to-phoneme (G2P) module to convert the word 
 sequence to phone sequence. Finally, we apply a forced aligner to align the word sequence and the phone sequence 
 with the speech to obtain word-level and phone-level time stamps. These are used for correction. <br>
@@ -579,7 +579,7 @@ audio is obtained by feeding the perturbed audio and unperturbed text to the sys
 In this part, we apply CorrectSpeech to L2-ARCTIC dataset for accent reduction <br>
 <br>
 <span style="color:blue">F-Align+Word-Phone</span>: In this setting, F-Align S2T module is combined with Word-Phone correction method. <br>
-<span style="color:blue">F-Align+Phone-Phone<</span>:  In This setting, F-Align S2T module is combined with Phone-Phone correction method. <br>
+<span style="color:blue">F-Align+Phone-Phone</span>:  In This setting, F-Align S2T module is combined with Phone-Phone correction method. <br>
 <br>
 In each sample, an accented audio and a modified audio are provided. The accented audio is the groundtruth 
 recording in L2-ARCTIC dataset. The modified audio is obtained by feeding the accented audio and annoated 
